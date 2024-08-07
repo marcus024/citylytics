@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Citylytics</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="logout.css">
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+    <!-- for header part -->
+    <header>
+        <div class="logosec">
+            <div class="logo">Project Citylytics</div>
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+                 class="icn menuicn" 
+                 id="menuicn" 
+                 alt="menu-icon">
+        </div>
+        <div class="message">
+            <div class="dp">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
+                     class="dpicn" 
+                     alt="dp">
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                    <div class="nav-option option1">
+                        <img src="icons/da_white.png" class="nav-img" alt="dashboard">
+                        <a href="dashboard.html">Dashboard</a>
+                    </div>
+                    <div class="option2 nav-option ">
+                        <img src="icons/manual_white.png" class="nav-img" alt="articles">
+                        <a href="user.html" >User Manual</a>
+                    </div>
+                    <div class="option4 nav-option active">
+                        <img src="icons/set_white.png" class="nav-img active" alt="articles">
+                        <a href="settings.html" class="active">Settings</a>
+                    </div>
+                    <div class="nav-option option3">
+                        <img src="icons/in_white.png" class="nav-img" alt="report">
+                        <a href="about.html">About</a>
+                    </div>
+                    <div class="nav-option logout">
+                        <img src="icons/lo_white.png" class="nav-img" alt="logout">
+                        <a href="#" onclick="logoutConfirmationUser(event)">Logout</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="main">
+            <div class="container">
+                <div class="user-profile">
+                    <p class="userP">Current User Profile</p>
+                    <div class="imageUser">
+                        <!-- Put here the image from firebase -->
+                        <img src="images/calipayan.png" alt="Profile Picture" class="profile-pic" id="profile-pic"> 
+                        <div class="user-info">
+                            <!-- Insert here the details from firebase -->
+                            <p><strong>Name:</strong> <span id="user-name" class="profileD"></span></p>
+                            <p><strong>Email:</strong> <span id="user-email" class="profileD"></span></p>
+                            <p><strong>Password:</strong> <span id="user-password" class="profileD"></span></p>
+                            <p><strong>Phone:</strong> <span id="user-phone" class="profileD"></span></p>
+                            <p><strong>Office:</strong> <span id="user-office" class="profileD"></span></p>
+                            <p><strong>Position:</strong> <span id="user-position" class="profileD"></span></p>
+                            <p><strong>Agenda:</strong> <span id="user-agenda" class="profileD"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-user">
+                    <p class="userP">Add User</p>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                         <div class="form-group">
+                            <label for="office">Office</label>
+                            <input type="text" id="office" name="office">
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Position</label>
+                            <input type="text" id="position" name="position">
+                        </div>
+                        <div class="form-group">
+                            <label for="agenda">Agenda</label>
+                            <input type="text" id="agenda" name="agenda">
+                        </div>
+                        <div class="form-group">
+                            <label for="idpic">Upload ID Picture</label>
+                            <input type="file" id="idpic" name="idpic">
+                        </div>
+                        <button type="submit" id="addUser">Add User</button>
+                        <div class="divider"></div>
+                        <div id="alertContainer" class="alert"></div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        <!-- Logout Confirmation Modal -->
+        <div id="logoutModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="confirm">Are you sure you want to logout?</p>
+                <button id="confirmLogout">Yes</button>
+                <button id="cancelLogout">No</button>
+            </div>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById('logoutModal');
+            var closeBtn = modal.querySelector('.close');
+            var confirmLogoutBtn = document.getElementById('confirmLogout');
+            var cancelLogoutBtn = document.getElementById('cancelLogout');
+
+            window.logoutConfirmationUser = function(event) {
+                event.preventDefault();
+                modal.style.display = "block";
+            }
+
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            cancelLogoutBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            confirmLogoutBtn.onclick = function() {
+                window.location.href = '../../index.html';
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+    </script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+        import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBWEO8zpfEzUNtt8oHzYIq5PzMpW6Efj_I",
+            authDomain: "project-citylytics.firebaseapp.com",
+            databaseURL: "https://project-citylytics-default-rtdb.firebaseio.com",
+            projectId: "project-citylytics",
+            storageBucket: "project-citylytics.appspot.com",
+            messagingSenderId: "589518230343",
+            appId: "1:589518230343:web:41a5daeb85810ea9257262",
+            measurementId: "G-V0PWB4WS2G"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const database = getDatabase(app);
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in
+                const uid = user.uid;
+                const userRef = ref(database, 'users/' + uid);
+
+                get(userRef).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        const userData = snapshot.val();
+                        document.getElementById('user-name').textContent = userData.name;
+                        document.getElementById('user-email').textContent = userData.email;
+                        document.getElementById('user-password').textContent = userData.password;
+                        document.getElementById('user-phone').textContent = userData.phone;
+                        document.getElementById('user-office').textContent = userData.office;
+                        document.getElementById('user-position').textContent = userData.position;
+                        document.getElementById('user-agenda').textContent = userData.agenda;
+                        document.getElementById('profile-pic').src = userData.idpic;
+                    } else {
+                        console.log("No data available");
+                    }
+                }).catch((error) => {
+                    console.error(error);
+                });
+            } else {
+                // User is not signed in
+                console.log("Not signed in");
+            }
+        });
+
+        const showAlert = (message, isSuccess = true) => {
+            const alertContainer = document.getElementById('alertContainer');
+            alertContainer.innerHTML = `<div class="alert ${isSuccess ? 'alert-success' : 'alert-error'}">${message}</div>`;
+        };
+
+        document.getElementById('addUser').addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent form submission
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var phone = document.getElementById('phone').value;
+            var office = document.getElementById('office').value;
+            var position = document.getElementById('position').value;
+            var agenda = document.getElementById('agenda').value;
+            var image = document.getElementById('idpic').value; // Assuming this is a URL or a base64 encoded string
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    set(ref(database, 'users/' + user.uid), {
+                        name: name,
+                        email: email,
+                        password: password,
+                        phone: phone,
+                        office: office,
+                        position: position,
+                        agenda: agenda,
+                        idpic: image
+                    })
+                    .then(() => {
+                        showAlert('User Created Successfully.');
+                        // Clear input fields
+                        document.getElementById('name').value = '';
+                        document.getElementById('email').value = '';
+                        document.getElementById('password').value = '';
+                        document.getElementById('phone').value = '';
+                        document.getElementById('office').value = '';
+                        document.getElementById('position').value = '';
+                        document.getElementById('agenda').value = '';
+                        document.getElementById('idpic').value = '';
+                    })
+                    .catch((error) => {
+                        showAlert(error.message, false);
+                    });
+                })
+                .catch((error) => {
+                    showAlert(error.message, false);
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Logout Confirmation</title>
+    <link rel="stylesheet" href="logout.css">
+</head>
+<body>
+    <iframe id="dynamic-iframe" src="your-iframe-source.html"></iframe>
+
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="confirm">Are you sure you want to logout?</p>
+            <button id="confirmLogout">Yes</button>
+            <button id="cancelLogout">No</button>
+        </div>
+    </div>
+    <script src="logout.js"></script>
+</body>
+</html>

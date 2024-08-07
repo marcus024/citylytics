@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Citylytics</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="logout.css">
+    <link rel="stylesheet" href="dash.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- for header part -->
+    <header>
+        <div class="logosec">
+            <div class="logo">Project Citylytics</div>
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+                 class="icn menuicn" 
+                 id="menuicn" 
+                 alt="menu-icon">
+        </div>
+        <div class="message">
+            <div class="dp">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
+                     class="dpicn" 
+                     alt="dp">
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                    <div class="nav-option option1">
+                        <img src="icons/da_white.png" class="nav-img" alt="dashboard">
+                        <a href="dashboard.html">Dashboard</a>
+                    </div>
+                    <div class="option2 nav-option active">
+                        <img src="icons/manual_white.png" class="nav-img active" alt="articles">
+                        <a href="user.html" class="active">User Manual</a>
+                    </div>
+                    <div class="option4 nav-option ">
+                        <img src="icons/set_white.png" class="nav-img" alt="articles">
+                        <a href="settings.html" >Settings</a>
+                    </div>
+                    <div class="nav-option option3">
+                        <img src="icons/in_white.png" class="nav-img" alt="report">
+                        <a href="about.html">About</a>
+                    </div>
+                    <div class="nav-option logout">
+                        <img src="icons/lo_white.png" class="nav-img" alt="logout">
+                        <a href="#" onclick="logoutConfirmationUser(event)">Logout</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="main">
+            <div class="DashContainer">
+                <div class="swiffy-slider">
+                    <ul class="slider-container">
+                        <li><img src="../usermanual/usermanual/1.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/2.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/3.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/4.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/5.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/6.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/7.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/8.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/9.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/10.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/11.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/12.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/13.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/14.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/15.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/16.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/17.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/18.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/19.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="../usermanual/usermanual/20.jpg" style="max-width: 100%;height: auto;"></li>
+                    </ul>
+
+                    <button type="button" class="slider-nav"></button>
+                    <button type="button" class="slider-nav slider-nav-next"></button>
+
+                    <div class="slider-indicators">
+                        <button class="active"></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Logout Confirmation Modal -->
+        <div id="logoutModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="confirm">Are you sure you want to logout?</p>
+                <button id="confirmLogout">Yes</button>
+                <button id="cancelLogout">No</button>
+            </div>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById('logoutModal');
+            var closeBtn = modal.querySelector('.close');
+            var confirmLogoutBtn = document.getElementById('confirmLogout');
+            var cancelLogoutBtn = document.getElementById('cancelLogout');
+
+            window.logoutConfirmationUser = function(event) {
+                event.preventDefault();
+                modal.style.display = "block";
+            }
+
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            cancelLogoutBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            confirmLogoutBtn.onclick = function() {
+                window.location.href = '../../index.html';
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+    </script>
+</body>
+</html>

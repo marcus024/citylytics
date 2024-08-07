@@ -1,0 +1,176 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack as rows */
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    width: 100%; /* Expand to fill the screen width */
+  
+}
+.profileD{
+    font-weight: 300;
+    color: #0F3D6E;
+}
+.user-profile,
+.add-user {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Adjust width for responsiveness */
+    max-width: 1200px; /* Maximum width */
+    box-sizing: border-box;
+}
+
+.user-profile {
+    margin-bottom: 10px; /* Add some margin for spacing */
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.profile-pic {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+
+.user-info p {
+    margin: 10px 0; /* Adjust the spacing between rows */
+    font-weight: 300;
+}
+
+.user-info{
+    margin-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #0F3D6E;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0057b394;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .user-profile,
+    .add-user {
+        width: 95%; /* Make the containers full-width on smaller screens */
+    }
+}
+
+.userP {
+    font-weight: 500;
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+.imageUser {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 0%;
+    border: 3px solid #0F3D6E;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 3px;
+}
+
+.user-info p {
+    margin: 10px 10px;
+    font-weight: 300;
+}
+
+.user-info strong {
+    margin: 15px 15px;
+    font-weight: 500;
+}
+
+.buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+    font-weight: 400;
+}
+
+.edit-icon, .save-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-icon img, .save-button img {
+    width: 24px;
+    height: 24px;
+}
+
+label {
+    font-weight: 400;
+}
+
+button {
+    font-weight: 400;
+}
+
+.add-user form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between the fields */
+    row-gap: 10px; /* Adjust row gap */
+}
+
+.add-user .form-group {
+    flex: 1 1 calc(50% - 20px); /* Two columns */
+    min-width: 200px;
+}
+input{
+    font-weight: 300;
+}

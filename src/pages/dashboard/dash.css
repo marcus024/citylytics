@@ -1,0 +1,6 @@
+.DashContainer {
+  background-color: white;
+  height: 100vh; /* 10% of the viewport height */
+  width: 100vw;  /* 10% of the viewport width */
+  padding: 20px;
+}

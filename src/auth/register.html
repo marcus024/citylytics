@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Citylytics</title>
+  <link rel="stylesheet" href="../index.css" />
+</head>
+<body>
+  <div class="login-container">
+    <!-- Login Form -->
+    <form id="regForm" style="display: block;">
+      <h1>REGISTER</h1>
+      <input type="text" placeholder="Email" id="email" required>
+      <div class="password-container">
+        <input type="password" placeholder="Password" id="reg-password" required>
+        <span id="togglePassword" class="toggle-password">
+          <img src="../icons/show.png" alt="Show Password" id="showRegIcon" />
+          <img src="../icons/hide.png" alt="Hide Password" id="hideRegIcon" style="display:none;" />
+        </span>
+      </div>
+      <button name="submit" type="button" id="submit" class="sub">Sign Up</button>
+    </form>
+    <div class="href">
+      <a href="../index.html">Log In</a>
+    </div>
+    <div class="divider"></div>
+    <div id="alertContainer" class="alert"></div>
+  </div>
+  
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBWEO8zpfEzUNtt8oHzYIq5PzMpW6Efj_I",
+      authDomain: "project-citylytics.firebaseapp.com",
+      databaseURL: "https://project-citylytics-default-rtdb.firebaseio.com",
+      projectId: "project-citylytics",
+      storageBucket: "project-citylytics.appspot.com",
+      messagingSenderId: "589518230343",
+      appId: "1:589518230343:web:41a5daeb85810ea9257262",
+      measurementId: "G-V0PWB4WS2G"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const database = getDatabase(app);
+
+    const showAlert = (message, isSuccess = true) => {
+      const alertContainer = document.getElementById('alertContainer');
+      alertContainer.innerHTML = `<div class="alert ${isSuccess ? 'alert-success' : 'alert-error'}">${message}</div>`;
+    };
+
+    document.getElementById('submit').addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent form submission
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('reg-password').value;
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          set(ref(database, 'users/' + user.uid), {
+            email: email,
+            password: password,
+          })
+          .then(() => {
+            showAlert('User Created Successfully.');
+            // Clear input fields
+            document.getElementById('email').value = '';
+            document.getElementById('reg-password').value = '';
+          })
+          .catch((error) => {
+            showAlert(error.message, false);
+          });
+        })
+        .catch((error) => {
+          showAlert(error.message, false);
+        });
+    });
+  </script>
+  <script src="regtoggle.js"></script>
+</body>
+</html>

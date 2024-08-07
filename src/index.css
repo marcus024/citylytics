@@ -1,0 +1,129 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: auto;
+  max-width: 38rem;
+  padding: 2rem;
+  
+  background-image: url('images/login_bg.jpg');
+  background-size: cover; /* Ensure the image covers the entire window */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  margin: 0; /* Remove default body margin */
+  height: 100vh; /* Ensure body takes the full height of the viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 40px;
+            color: #f0f0f0;
+            font-family:Arial;
+            font-weight: bold;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 300px;
+            height: 30px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            font-family: Arial;
+            font-weight: bold;
+            font-size: 20;
+            background-color: rgba(255, 255, 255, 0.);
+        }
+        .login-container button {
+            width: 320px;
+            padding: 10px;
+            background-color:  #0F3D6E;
+            border: none;
+            border-radius: 15px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            height: 50px;
+            font-weight: bold;
+        }
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+        .login-container{
+            background-color: rgba(255, 255, 255, 0.4); /* Adjust the last number for transparency */
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            border: 2px solid #f0f0f0;
+            position: absolute; /* Absolute positioning to center */
+            top: 50%; /* Shift container 50% down from top */
+            left: 50%; /* Shift container 50% from left */
+            transform: translate(-50%, -50%); 
+          
+        }
+        .social-button{
+          padding-top: 30;
+          background-color: #007bff;
+        }
+        .toggle-password {
+          position: absolute;
+          right: 30px;
+          padding-top: 15px;
+          padding-right: 20px;
+          cursor: pointer;
+        }
+
+        .toggle-password img {
+          width: 20px;
+          height: 20px;
+          color: #0F3D6E;
+        }
+        .password-container {
+          position: relative;
+        
+        }
+
+        .form-toggle-buttons {
+          display: flex;
+          justify-content: space-evenly;
+          margin-top: 20px;
+        }
+
+        .form-toggle-buttons button {
+          width: 40%;
+          padding: 10px;
+          font-size: 16px;
+          cursor: pointer;
+          border: 1px solid #ccc;
+          border-radius: 15px;
+          background-color: #f9f9f9;
+          color: #0F3D6E;
+        }
+
+        .form-toggle-buttons button:hover {
+          background-color:#0F3D6E;
+          color: #f0f0f0;
+        }
+        .href a{
+          color: white;
+          font-family: Arial;
+        }
+        .alert{
+          font-weight: 100;
+          font-size: 12;
+          color: #0F3D6E;
+          font-weight: bold;
+        }
+        .divider{
+          height: 30px;
+        }

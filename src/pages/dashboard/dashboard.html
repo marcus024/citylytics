@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport" 
+          content="width=device-width, 
+                   initial-scale=1.0">
+    <title>Project Cityltyics</title>
+    <link rel="stylesheet" 
+          href="main.css">
+    <link rel="stylesheet" 
+          href="responsive.css">
+    <link rel="stylesheet" 
+          href="logout.css">
+    <link rel="stylesheet" 
+          href="dash.css">
+</head>
+
+<body>
+  
+    <!-- for header part -->
+    <header>
+
+        <div class="logosec">
+            <div class="logo">Project Citylytics</div>
+            <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+                class="icn menuicn" 
+                id="menuicn" 
+                alt="menu-icon">
+        </div>
+        <div class="message">
+            <div class="dp">
+              <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
+                    class="dpicn" 
+                    alt="dp">
+              </div>
+        </div>
+    </header>
+    <div class="main-container">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                    <div class="nav-option option1 active">
+                        <img src="icons/da_white.png"
+                            class="nav-img active" 
+                            alt="dashboard">
+                        <!-- <h3> Dashboard</h3> -->
+                         <a href="dashboard.html" class="active" >Dashboard</a>
+                    </div>
+
+                    <div class="option2 nav-option">
+                        <img src="icons/manual_white.png"
+                            class="nav-img" 
+                            alt="articles">
+                        <!-- <h3> User Manual</h3> -->
+                         <a href="user.html">User Manual</a>
+                    </div>
+
+                    <div class="option4 nav-option">
+                        <img src="icons/set_white.png"
+                            class="nav-img" 
+                            alt="articles">
+                        <!-- <h3> User Manual</h3> -->
+                         <a href="settings.html">Settings</a>
+                    </div>
+
+                    <div class="nav-option option3">
+                        <img src="icons/in_white.png"
+                            class="nav-img" 
+                            alt="report">
+                        <!-- <h3> About</h3> -->
+                         <a href="about.html">About</a>
+                    </div>
+                    <div class="nav-option logout">
+                        <img src="icons/lo_white.png"
+                            class="nav-img" 
+                            alt="logout">
+                        <!-- <h3>Logout</h3> -->
+                        <a href="#" onclick="logoutConfirmation(event)">Logout</a>
+                    </div>
+                    
+                </div>
+            </nav>
+            
+        </div>
+        <div class="main">
+            <div class="DashContainer">
+                <iframe id="dynamic-iframe" title="CITYLYTICS V3" src="https://app.powerbi.com/reportEmbed?reportId=aa87610b-9484-4673-86eb-461127ab45f4&autoAuth=true&ctid=45a79e6c-c570-4b26-a81f-c75bf5aec06e" frameborder="0" allowFullScreen="true"></iframe>
+            </div>
+            
+            <!-- <div class="">
+                <iframe id="dynamic-iframe" title="CITYLYTICS V3" src="https://app.powerbi.com/reportEmbed?reportId=aa87610b-9484-4673-86eb-461127ab45f4&autoAuth=true&ctid=45a79e6c-c570-4b26-a81f-c75bf5aec06e" frameborder="0" allowFullScreen="true"></iframe>
+            </div> -->
+        </div>
+        <!-- Logout Confirmation Modal -->
+        <div id="logoutModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="confirm">Are you sure you want to logout?</p>
+                <button id="confirmLogout">Yes</button>
+                <button id="cancelLogout">No</button>
+            </div>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+    <script src="logout.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+
+.container {
+    width: 100%;
+    max-width: 1650px;
+    background-color: white;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    
+     /* overflow-y: auto;  */
+    display: flex;
+    flex-direction: column;
+  
+    padding: 10px;
+    height: 100%; /* Fixed height */
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.row:last-child {
+    border-bottom: none;
+}
+
+.column {
+    text-align: center;
+    flex: 5; /* Allows the column to grow and shrink */
+    border-radius: 20px;
+}
+
+.column.about {
+    padding: 20px;
+    height: auto;
+    background-color: #0F3D6E;
+    width: auto;
+    
+}
+.abouttitle{
+    font-size: 100;
+    font-weight: 700;
+    color: #ffffff;
+}
+.desp{
+    font-weight: 300;
+    color: white;
+}
+.dividerabout{
+    height: 30px;
+}
+.column.profile {
+    height: 370px;
+    background-color: #ffffff;
+}
+.meet{
+    font-size: 100;
+    font-weight: 700;
+    color: #0F3D6E ;
+}
+h3 {
+    margin-bottom: 10px;
+    color: #0F3D6E;
+}
+
+p {
+    margin: 0;
+    color: #555555;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+    
+    .row {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .column {
+        width: 100%;
+        height: auto; /* Allow height to adjust for small screens */
+    }
+
+    .column.about {
+        height: auto; /* Allow height to adjust for small screens */
+    }
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.carddd {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    width: 310px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 100;
+    margin: 20px;
+    text-align: center;
+    padding: 10px;
+    font-size: 12;
+}
+
+.card img {
+    width: 100%;
+    height: 220px; /* Maintain aspect ratio */
+}
+
+
+.card .title {
+    color: black;
+    font-size: 12px;
+    font-weight: 300;
+}
+.card .name{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.card .email{
+    font-style: italic;
+    font-weight: 350;
+    font-size: 12px;
+}
+
+.card .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #0F3D6E;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.card .button:hover {
+    background-color: #0b3050;
+}
